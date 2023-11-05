@@ -1,0 +1,60 @@
+{%  extends  "ticketing/layout.html" %}
+
+
+{% block titlePage %} Time List{% endblock%}
+
+{% block mainContent %} 
+
+
+        {% if timeList %}
+
+        <main  class="main-content mt-3">
+                {% for time in  timeList %}
+
+                <div class="card main-list card-custom mt-3" style="width: 18rem;">
+                        <div class="card-body">
+                                <h5 class="card-title">{{time.eventModel}}</h5>
+                                <h6 class="card-subtitle mb-2 text-body-secondary">{{time.eventModel.teacherName}}</h6>
+                                <p class="card-text  ">{{time.locationModel}}</p>
+                                <p class="card-link">{{time.startDateTime }}</p>
+                                <p class="card-link">{{time.get_jalali_date }}</p>
+
+                                {% comment %} <a href="#" class=" btn btn-success card-link mt-2">{{time.status }}</a> {% endcomment %}
+                                <a href="#" class=" 
+                                {% if  time.status == time.start %}
+                                    btn btn-success card-link mt-2
+
+                                {% elif time.status == time.end %}
+                                        btn btn-primary card-link mt-2
+
+                                {% elif time.status == time.cancel %}
+                                        btn btn-light cancel card-link mt-2
+
+                                {% elif time.status == time.sales %}
+                                btn btn-danger card-link mt-2
+
+
+                                {% endif %}
+                                
+                                
+                                
+                                
+                                ">{{time.get_status_display }}</a>
+                        </div>
+                </div>
+                {% endfor %}
+
+
+
+
+        </main>
+
+
+
+        
+        
+
+
+        {% endif%}
+
+        {% endblock%}

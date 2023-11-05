@@ -1,0 +1,32 @@
+{%  extends  "ticketing/layout.html" %}
+
+      
+{% block titlePage %}  Profile Page{% endblock%}
+
+
+
+{% block mainContent %}
+
+ 
+<div class="container-fluid mt-3">
+
+  <div class="card mx-auto" style="width: 18rem;">
+    <img class="card-img-top" src="{{profile.profileImage.url}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title d-inline">{{profile.user.first_name}}</h5>
+      <h5 class="card-title d-inline">{{profile.user.last_name}}</h5>
+      <p class="card-text"> {{profile.get_gender_display}} </p>
+      <p class="card-text"> {{profile.credit}} </p>
+      <p><i class="fa-solid fa-download"></i>  Join:{{dataJoin}} </p>
+      <a class="btn btn-danger  text-white"  href="{% url 'accounts:profile-edit'  %}">Edit Profile</a>
+      <a class="btn btn-success  text-white"  href="{% url 'ticketing:event-selection'  %}">Select Event</a>
+
+   
+    </div>
+  </div>
+  
+
+</div>
+
+
+{% endblock%}

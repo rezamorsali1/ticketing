@@ -1,0 +1,37 @@
+{%  extends  "ticketing/layout.html" %}
+
+      
+{% block titlePage %} Location List{% endblock%}
+ 
+{% block mainContent %} 
+
+
+
+<table class="table mt-3">
+  <thead class="thead-dark">
+    <tr>
+    
+      <th scope="col">Name</th>
+      <th scope="col">Address</th>
+    
+    </tr>
+  </thead>
+  <tbody>
+    {% for location in  locationList %}
+    <tr>
+      
+      <td>{{location.name}}</td>
+      <td>{{location.address}}</td>
+   
+    </tr>
+    {% endfor %}
+   
+  </tbody>
+</table>
+
+
+
+
+
+
+{% endblock%}

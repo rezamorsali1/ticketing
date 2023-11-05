@@ -1,0 +1,40 @@
+{%  extends  "ticketing/layout.html" %}
+
+      
+{% block titlePage %}  {{eventdetails.name}}  Event Selection{% endblock%}
+
+
+
+{% block mainContent %}
+
+<form action="{% url 'ticketing:event-list-selection' %}" method="POST" class="mt-3 ml-2" >
+   {% csrf_token %} 
+
+   <ul  >
+    {% for  event  in events  %}
+
+    <li> 
+      <input type="checkbox" name="selected_events" value="{{event.id}}"  id="event{{event.id}}">
+     {{ event.name}}
+
+    </li>
+
+    {% endfor %}
+
+   </ul>
+
+     
+
+    
+
+    <button type="submit" class="btn btn-primary p-1  mt-3 ">  Continue</button>
+    
+    
+</form>
+
+
+
+
+
+
+{% endblock%}

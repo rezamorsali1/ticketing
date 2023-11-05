@@ -1,0 +1,43 @@
+{%  extends  "ticketing/layout.html" %}
+
+
+{% block titlePage %} Event List{% endblock%}
+
+{% block mainContent %} 
+
+
+        {% if eventList %}
+        <form action="" method="GET" class="mt-3 ml-2">
+
+            {{searchForm}}
+
+            <button type="submit" class="btn btn-info p-1  ">  Search</button>
+            
+        </form>
+       
+      
+
+        <p class="lead m-3">Count of Event : <span class="badge bg-info "> {{eventCount}} </span>   </p>
+        <main class="main-content">
+
+
+        {% for event in  eventList %} 
+
+        <div class="main-list">
+
+            <a href="{% url 'ticketing:event-details'  event_id=event.id %}" >
+                <img src="{{event.poster.url}}"  class="imagebox">
+                <div>{{event}}</div>
+            </a>
+        </div>
+
+        {% endfor %}
+
+
+        </main>
+
+
+
+        {% endif%}
+
+        {% endblock%}

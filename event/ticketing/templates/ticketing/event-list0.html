@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:Event List:</title>
+    {% comment %} <link  rel="stylesheet" type="text/css"href="/static/ticketing/css/bootstrap.css">
+    <link  rel="stylesheet" type="text/css"href="/static/ticketing/css/main.css"> {% endcomment %}
+    <link  rel="stylesheet" type="text/css"href="{%static 'ticketing/css/bootstrap.css' %}">
+    <link  rel="stylesheet" type="text/css"href="{%static 'ticketing/css/main.css' %}">
+   
+</head>
+<body>
+
+    <h3  class="head jumbotron">Event List </h3>
+    <a class="btn btn-lg btn-outline-danger ml-2">Event Adress </a>
+    <a class="btn btn-lg btn-outline-primary ml-2">Main </a>
+
+
+      
+    {% if eventList %}
+      <p class="lead m-3">Count of Event : <span class="badge bg-info "> {{eventCount}} </span>   </p>
+      <main class="main-content">
+
+
+    {% for event in  eventList %} 
+        <div class="main-list">
+
+            <a href="#" >
+                <img src="{{event.poster.url}}"  class="imagebox">
+                <div>{{event}}</div>
+            </a>
+        </div>
+
+        {% endfor %}
+
+
+      </main>
+
+    
+
+    {% endif%}
+ 
+
+
+        <script src="{%static 'ticketing/js/jquery-3.7.0.js' %}"></script>
+        <script src="{%static 'ticketing/js/jquery-3.7.0.js' %}"></script>
+        <script src="{%static 'ticketing/js/jquery-3.7.0.js' %}"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+h1{
+    text-align: center;
+    color: #252546;
+
+}
+
+ul{
+
+    list-style: circle;
+    color:green;
+    font-family: 'Courier New', Courier, monospace;
+    font-size:25px
+
+}
+
+p{
+    color:red
+}
+ul li:nth-child(even)
+{
+    background-color: bisque;
+}
+
+img{
+    width:200px;
+    height: 200px;
+}

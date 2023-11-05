@@ -1,0 +1,36 @@
+{%  extends  "ticketing/layout.html" %}
+
+      
+{% block titlePage %}  Profile Edit{% endblock%}
+
+
+
+{% block mainContent %}
+
+ 
+<div class="container-fluid mt-3">
+    <form class="form" action="" method="POST" enctype="multipart/form-data"> 
+    {% csrf_token %}
+  {% comment %} {{userEditForm}} {% endcomment %}
+
+  <div class="card mx-auto" style="width: 18rem;">
+    <img class="card-img-top" src="{{profileImage.url }}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title "> {{userEditForm.first_name}}</h5>
+      <h5 class="card-title ">{{userEditForm.last_name}} </h5>
+      <h5 class="card-title">{{userEditForm.email}} </h5>
+
+      <p class="card-text"> {{profileEditForm.gender}} </p>
+      <p class="card-text">   {{profileEditForm.credit}} </p>
+      {{profileEditForm.profileImage}}
+        
+       <input type="submit" class="btn btn-info mt-2" value="Save">
+    </form>
+    </div>
+  </div>
+  
+
+</div>
+
+
+{% endblock%}

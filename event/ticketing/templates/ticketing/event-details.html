@@ -1,0 +1,31 @@
+{%  extends  "ticketing/layout.html" %}
+
+      
+{% block titlePage %}  {{eventdetails.name}}  Details{% endblock%}
+
+
+
+{% block mainContent %}
+
+
+<div class="container-fluid mt-3">
+
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="{{eventdetails.poster.url}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Event :{{eventdetails.name}}</h5>
+      <h6 class="card-title">Teacher:{{eventdetails.teacherName}}</h6>
+
+      <p class="card-text"> Duration:{{eventdetails.lenght}} Minutes</p>
+      <a class="btn btn-success text-" href="{% url 'ticketing:event-edit'  event_id=eventdetails.id %}">  Edit </a>
+   
+    </div>
+  </div>
+  
+
+</div>
+
+
+
+
+{% endblock%}

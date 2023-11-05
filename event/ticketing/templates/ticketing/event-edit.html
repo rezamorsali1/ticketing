@@ -1,0 +1,42 @@
+{%  extends  "ticketing/layout.html" %}
+
+      
+{% block titlePage %}  {{eventdetails.name}}  Event Edit{% endblock%}
+
+
+
+{% block mainContent %}
+
+<form action="" method="POST" class="mt-3 ml-2"  enctype="multipart/form-data">
+   {% csrf_token %} 
+
+     
+    {% comment %} {{eventForm}} {% endcomment %}
+   
+
+    {% comment %} <p>name:     {{eventForm.name}}</p> {% endcomment %}
+    <hr>
+     <div > 
+        <img src="{{posterImage.url}}"  class="imagebox"> </img>
+
+        <p class="mt-2"> Name: {{eventForm.name}}</p>
+        <p> Teacher: {{eventForm.teacherName}}</p>
+        <p> lenght: {{eventForm.lenght}}</p>
+        <p> Image: {{eventForm.poster}}</p>
+
+
+
+     </div>
+  
+
+    <button type="submit" class="btn btn-info p-1  mt-3 ">  Save</button>
+    
+    
+</form>
+
+
+
+
+
+
+{% endblock%}

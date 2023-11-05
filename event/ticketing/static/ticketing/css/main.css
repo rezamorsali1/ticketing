@@ -1,0 +1,64 @@
+.head
+{
+     text-align: center;
+     color:272727;
+     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+     letter-spacing: 3px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.main-content
+{
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+   
+
+}
+
+.main-list
+{
+    /* flex: 1; */
+    margin-left: 15px;
+    padding: 10px;
+    border:1px solid #cccc;
+    width: 270px;
+    height: 200px;
+
+
+}
+ .card-custom
+ {
+    width: 270px;
+    height: 280px;
+
+} 
+.cancel
+{
+    border:1px solid
+}
+
+.imagebox
+{
+    width: 250px;
+    height: 200px;;
+}
+
+ul{
+    list-style: none;
+}
+
+@media screen  and (max-width:789px) {
+
+    .main-content
+{
+   
+    flex-direction: column;
+
+}
+    
+}

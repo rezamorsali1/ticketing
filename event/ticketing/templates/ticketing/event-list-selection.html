@@ -1,0 +1,49 @@
+{%  extends  "ticketing/layout.html" %}
+
+      
+{% block titlePage %}  {{eventdetails.name}}  Event  List Selection{% endblock%}
+
+
+
+{% block mainContent %}
+
+ 
+<main class="main-content mt-5">
+
+
+  {% for event in  events %} 
+
+  <div class="main-list"> 
+
+      <h5> {{event.name}} </h5>
+      <h6> {{event.teacherName}} </h6>
+
+          <img src="{{event.poster.url}}"  class="imagebox">
+         
+     
+  </div>
+
+  {% endfor %}
+
+
+  </main>
+
+
+  <div class="container-fluid mt-5 pt-5">
+     <a  href="javascript:history.back()" class="btn btn-lg btn-outline-primary ml-2">Back</a>
+
+      <a  href="{% url 'accounts:profile' %}" class="btn btn-lg btn-outline-primary ml-2">Next</a>
+	   <a href="{% url 'ticketing:export-CSV' %}" class="btn btn-success">Download CSV</a>
+
+       
+      <a  href="" class="btn btn-lg btn-outline-info ml-2">Download PDF</a>
+
+
+  </div>
+
+
+
+ 
+
+
+{% endblock%}

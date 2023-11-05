@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:Event List:</title>
+    {% comment %} <link  rel="stylesheet" type="text/css"href="/static/ticketing/css/bootstrap.css">
+    <link  rel="stylesheet" type="text/css"href="/static/ticketing/css/main.css"> {% endcomment %}
+    <link  rel="stylesheet" type="text/css"href="{%static 'ticketing/css/bootstrap.css' %}">
+    <link  rel="stylesheet" type="text/css"href="{%static 'ticketing/css/main.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   
+</head>
+<body>
+
+    <h3  class="head jumbotron">{% block titlePage %} {% endblock%}</h3>
+    
+    <div class="container-fluid">
+    {%  if user.is_authenticated %} 
+           <a  href="{% url 'accounts:profile' %}" class="btn btn-lg btn-outline-info ml-2">profile </a>
+            <a  href="{% url 'accounts:logout' %}" class="btn btn-lg btn-outline-primary ml-2">Logout </a>
+        {% else %}
+            <a  href="{% url 'accounts:login' %}" class="btn btn-lg btn-outline-danger ml-2">Login</a>
+            <a  href="{% url 'accounts:profile-register' %}" class="btn btn-lg btn-outline-warning ml-2">Register</a>
+
+    {%  endif %}
+    <a  href="/ticketing/event-list" class="btn btn-lg btn-outline-primary ml-2">Main </a>
+    <a  href="{% url 'ticketing:location-list' %}" class="btn btn-lg btn-outline-danger ml-2">Event Address </a>
+    <a  href="{% url 'ticketing:time-list' %}" class="btn btn-lg btn-outline-primary ml-2">Time List </a>
+    </div>
+
+
+    {% block mainContent %} {% endblock%}
+    
+ 
+
+
+        <script src="{%static 'ticketing/js/jquery-3.7.0.js' %}"></script>
+        <script src="{%static 'ticketing/js/jquery-3.7.0.js' %}"></script>
+        <script src="{%static 'ticketing/js/jquery-3.7.0.js' %}"></script>
+
+
+</body>
+</html>

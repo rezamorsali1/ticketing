@@ -1,0 +1,33 @@
+{%  extends  "ticketing/layout.html" %}
+
+      
+{% block titlePage %}  {{eventdetails.name}}  Profile register{% endblock%}
+
+
+
+{% block mainContent %}
+
+<div class="container w-50">
+    <form class="form mt-5" action="" method="POST"  enctype="multipart/form-data">
+
+        {% csrf_token %} 
+        <div class="form-group">
+            <p>Name: {{formData.first_name}} </p>
+            <p>Family: {{formData.last_name}} </p>
+            <p>Gender: {{formData.gender}} </p>
+            <p>Credeit: {{formData.credit}} </p>
+            <p>Email: {{formData.email}} </p>
+            <p>Username: {{formData.username}} </p>
+            <p>password: {{formData.password}} </p>
+            {{formData.profileImage}}
+            <p></p>
+
+            <input type="submit" class="btn btn-primary" value="register">
+
+
+          
+      </form>
+</div>
+
+
+{% endblock%}
